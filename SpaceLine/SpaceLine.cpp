@@ -8,10 +8,7 @@ int APIENTRY wWinMain(HINSTANCE hInstance, HINSTANCE, LPTSTR cmdLine, int cmdSho
 
 void SpaceLine::Window_Open(Win::Event& e)
 {
-	line(0, 3);
-	line(2, 7);
-	line(2, 5);
-	line(5, 3);
+
 }
 void SpaceLine::line(int espacios, int asteriscos)
 {
@@ -28,5 +25,19 @@ void SpaceLine::line(int espacios, int asteriscos)
 	}
 	Sys::Format(texto, L"\r\n");
 	tbxSalida.Text += texto;
+}
+
+void SpaceLine::btMostrar_Click(Win::Event& e)
+{
+	tbxSalida.Text = L"";
+	const int renglones = tbxEntrada.IntValue;
+	for (int i = 0, e = renglones - 1, a = 1; i < renglones; i++, e--, a++)
+	{
+		line(e, a);
+	}
+	for (int i = 0, e = 1, a = renglones - 1; i < renglones; i++, a--, e++)
+	{
+		line(e, a);
+	}
 }
 
