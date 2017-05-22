@@ -31,13 +31,13 @@ void SpaceLine::btMostrar_Click(Win::Event& e)
 {
 	tbxSalida.Text = L"";
 	const int renglones = tbxEntrada.IntValue;
-	for (int i = 0, e = renglones - 1, a = 1; i < renglones; i++, e--, a++)
+	for (int i = 0, e = renglones - 1; i < renglones; i++, e--)
 	{
-		line(e, a);
+		line(e, 2);
 	}
-	for (int i = 0, e = 1, a = renglones - 1; i < renglones; i++, a--, e++)
+	for (int i = 0, e = 1; i < renglones; i++,e++)
 	{
-		line(e, a);
+		line(e, 2);
 	}
 }
 
